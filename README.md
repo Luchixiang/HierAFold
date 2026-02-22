@@ -1,2 +1,2 @@
 # HierAFold
-Pytorch implementation of HierAFold. Code will be realeased soon. 
+Pytorch implementation of HierAFold. Code will be released soon. 
