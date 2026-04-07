@@ -422,7 +422,7 @@ class HierAFold(nn.Module):
 
                     priority_score = min_domain_dist + 2.0 * pae_domain_score.item()
 
-                    if pae_domain_score < 1:
+                    if pae_domain_score < 3:
                         domain_tokens_to_keep.append(domain_tokens)
                         priority_info[
                             f"chain_{other_id}_domain_{subunit_counter}_pae"

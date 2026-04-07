@@ -286,11 +286,11 @@ output/
 If you use HierAFold in your research, please cite:
 
 ```bibtex
-@article{hierafold2025,
-  title   = {HierAFold: Hierarchical Inference for Large Biomolecular Complex Structure Prediction},
-  author  = {Lu, Chixiang and others},
-  journal = {bioRxiv},
-  year    = {2025},
+@article{lu2026efficient,
+  title={Efficient Prediction of Large Protein Complexes via Subunit-Guided Hierarchical Refinement},
+  author={Lu, Chixiang and Zhong, Yunhua and Liang, Shikang and Qi, Xiaojuan and Jiang, Haibo},
+  booktitle={The Fourteenth International Conference on Learning Representations},
+  year={2026}
 }
 ```
 
