@@ -148,7 +148,10 @@ def run_interproscan_for_input(
             "Domain boundaries will be estimated from PAE maps during inference."
         )
         return None
-
+    if not os.path.exists(interproscan_datadir):
+        logger.info('interproscan data dir not exist, skip')
+        return None
+    print('interproscan_datadir:', interproscan_datadir)
     logger.info("Nextflow detected — running InterProScan domain annotation.")
 
     with open(input_json_path, "r") as fh:
@@ -480,7 +483,7 @@ def infer_predict(runner: InferenceRunner, configs: Any) -> None:
     gff3_dir = run_interproscan_for_input(
         input_json_path=configs.input_json_path,
         gff3_output_dir=opjoin(configs.dump_dir, "gff3_domains"),
-        interproscan_datadir=getattr(configs, "interproscan_datadir", "/data2/cxlu"),
+        interproscan_datadir=getattr(configs, "interproscan_datadir", "/data/cxlu"),
     )
     if gff3_dir is not None:
         logger.info(f"GFF3 domain annotations available at: {gff3_dir}")

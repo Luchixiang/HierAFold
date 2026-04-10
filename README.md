@@ -186,6 +186,7 @@ Accurate domain boundaries improve context selection, especially for large multi
 ```bash
 # Using the official installer
 curl -s https://get.nextflow.io | bash
+chmod +x nextflow
 mv nextflow /usr/local/bin/
 
 # Verify
@@ -225,8 +226,8 @@ For each context chain, domain boundaries are determined in the following order:
 1. GFF3 annotation  ──── available?  ──► use GFF3 domains
         │                   no
         ▼
-2. PAE-based split  ──── intra-chain PAE > threshold? ──► split with get_domain_splits()
-        │                   no
+2. PAE-based split ──► split with get_domain_splits()
+        │                  
         ▼
 3. Single domain (no split)
 ```

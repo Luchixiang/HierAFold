@@ -179,8 +179,10 @@ def get_default_runner(
     enable_cache=True,
     enable_fusion=True,
     enable_tf32=True,
+    interproscan_datadir:str=None
 ) -> InferenceRunner:
     inference_configs["model_name"] = model_name
+    inference_configs["interproscan_datadir"] = interproscan_datadir
     configs = {**configs_base, **{"data": data_configs}, **inference_configs}
     configs = parse_configs(
         configs=configs,
@@ -236,6 +238,7 @@ def inference_jsons(
     enable_fusion=True,
     enable_tf32=True,
     msa_server_mode: str = "protenix",
+    interproscan_datadir: str=None
 ) -> None:
     """
     infer_json: json file or directory, will run infer with these jsons
@@ -275,6 +278,7 @@ def inference_jsons(
         enable_cache,
         enable_fusion,
         enable_tf32,
+        interproscan_datadir,
     )
     configs = runner.configs
     for idx, infer_json in enumerate(tqdm.tqdm(infer_jsons)):
@@ -356,6 +360,8 @@ def protenix_cli():
     default="protenix",
     help="msa search mode, protenix or colabfold",
 )
+@click.option('--interproscan_datadir', type=str, default="/data/cxlu",
+    help="interpro database path for domain split",)
 def predict(
     input,
     out_dir,
@@ -373,6 +379,7 @@ def predict(
     enable_fusion,
     enable_tf32,
     msa_server_mode,
+    interproscan_datadir,
 ):
     """
     predict: Run predictions with protenix.
@@ -435,6 +442,7 @@ def predict(
         enable_fusion=enable_fusion,
         enable_tf32=enable_tf32,
         msa_server_mode=msa_server_mode,
+        interproscan_datadir=interproscan_datadir,
     )
 
 
