@@ -38,12 +38,12 @@ Input JSON (multi-chain complex)
              │  per-pair PAE maps + ranked scores
              ▼
 ┌──────────────────────────────────────────────────────┐
-│  select_context_tokens  (per query chain)             │
-│  1. distance-based token selection (≤ 40 Å cutoff)   │
-│  2. domain detection:                                 │
+│  select_context_tokens  (per query chain)             │ 
+│  1. domain detection:                                 │
 │     a. GFF3 annotation (InterProScan, if available)  │
 │     b. PAE-based domain splitting (fallback)         │
-│  3. PAE-guided additional token selection            │
+│  2. PAE-guided token selection based on distance an	 │
+│		  and PAE                                          │
 └────────────┬─────────────────────────────────────────┘
              │  focused context window (≤ 1000 tokens)
              ▼

@@ -31,6 +31,7 @@ inference_configs = {
     "input_json_path": RequiredValue(str),
     # "load_checkpoint_dir": os.path.join(code_directory, "./release_data/checkpoint/"),
     "load_checkpoint_dir":"./consistency_weight/",
+    "interproscan_datadir": "./interproscan_data",
     "num_workers": 16,
     "use_msa": True,
     "enable_tf32": True,
