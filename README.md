@@ -80,8 +80,7 @@ export LAYERNORM_TYPE=fast_layernorm
 # Optional: triangle attention / multiplicative kernels
 # See docs/kernels.md for setup
 ```
-
----
+Download the [distilled diffusion model weight](https://drive.google.com/file/d/1diiI6v8eD0ais-3c2DuAat7w-Ppa3l7t/view?usp=sharing) and put it in a folder consistency_weight. 
 
 ## Preparing Input
 
